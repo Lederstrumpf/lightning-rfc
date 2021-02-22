@@ -569,10 +569,9 @@ The receiving node:
   - if `fee_satoshis` is equal to its previously sent `fee_satoshis`:
     - SHOULD sign and broadcast the final closing transaction.
     - MAY close the connection.
-  - otherwise, if `fee_satoshis` is greater than
-the base fee of the final commitment transaction as calculated in
-[BOLT #3](03-transactions.md#fee-calculation):
-    - MUST fail the connection.
+  - otherwise, if `fee_satoshis` is greater than the base fee of the final
+  commitment transaction as calculated in [BOLT #3](03-transactions.md#fee-calculation):
+    - MAY fail the connection.
   - if `fee_satoshis` is not strictly
 between its last-sent `fee_satoshis` and its previously-received
 `fee_satoshis`, UNLESS it has since reconnected:
